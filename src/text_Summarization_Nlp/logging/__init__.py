@@ -45,3 +45,12 @@ logger = setup_logger("textSummarizerLogger")
 
 # Test logging
 logger.info("Logger is configured and ready.")
+
+# if __name__ == "__main__":
+#     try:
+#         # Usage
+#         logger = setup_logger("textSummarizerLogger")
+#         # Test logging
+#         logger.info("Logger is configured and ready.")
+#     except Exception as e:
+#         logger.error(f"Failed to run the Logger is configuration: {e}")

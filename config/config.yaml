@@ -9,6 +9,7 @@ data_ingestion:
 data_validation:
   root_dir: artifacts/data_validation
   STATUS_FILE: artifacts/data_validation/status.txt
+  REQUIRED_DIR: artifacts/data_ingestion/samsum_dataset
   ALL_REQUIRED_FILES: ["train", "test", "validation"]
 
 data_transformation:

@@ -1,7 +1,7 @@
 import os
 from box.exceptions import BoxValueError
 import yaml
-from logging import logger
+from text_Summarization_Nlp.logging import logger
 from ensure import ensure_annotations
 from box import ConfigBox
 from pathlib import Path
@@ -37,7 +37,7 @@ def read_yaml(path_to_yaml: Path) -> ConfigBox:
         logger.error(f"An error occurred while reading YAML file at {path_to_yaml}: {e}")
         raise e
 
-@ensure_annotations
+# @ensure_annotations
 def create_directories(path_to_directories: List[Path], verbose: bool = True):
     """
     Create a list of directories.
@@ -74,7 +74,3 @@ def get_size(path: Path) -> str:
         logger.error(f"Failed to get size for {path}: {e}")
         raise e
 
-# Test logging setup
-if __name__ == "__main__":
-    logger = setup_logger("textSummarizerLogger")
-    logger.info("Logger configured and test run successful.")

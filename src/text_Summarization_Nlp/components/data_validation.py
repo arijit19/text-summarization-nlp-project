@@ -24,7 +24,7 @@ class DataValidation:
         """
         try:
             required_files = set(self.config.ALL_REQUIRED_FILES)
-            existing_files = set(os.listdir(self.config.root_dir))
+            existing_files = set(os.listdir(self.config.REQUIRED_DIR))
 
             missing_files = required_files - existing_files
             validation_status = not missing_files

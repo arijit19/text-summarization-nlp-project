@@ -51,16 +51,17 @@ class DataTransformation:
         Perform the data transformation by converting and saving the dataset.
         """
         try:
-            dataset_samsum = load_from_disk(self.config.data_path)
-            logger.info(f"Dataset loaded from {self.config.data_path}")
+            # Convert Path object to string before using it with load_from_disk
+            data_path_str = str(self.config.data_path)
+            dataset_samsum = load_from_disk(data_path_str)
+            logger.info(f"Dataset loaded from {data_path_str}")
 
             dataset_samsum_pt = dataset_samsum.map(self.convert_examples_to_features, batched=True)
             logger.info("Dataset transformation complete")
 
             output_path = Path(self.config.root_dir) / "samsum_dataset"
-            dataset_samsum_pt.save_to_disk(output_path)
+            dataset_samsum_pt.save_to_disk(str(output_path))
             logger.info(f"Transformed dataset saved to {output_path}")
         except Exception as e:
             logger.error(f"Error in data transformation: {e}")
             raise e
-

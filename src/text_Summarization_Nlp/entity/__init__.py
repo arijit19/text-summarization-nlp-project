@@ -31,6 +31,7 @@ class DataValidationConfig:
     """
     root_dir: Path
     STATUS_FILE: str
+    REQUIRED_DIR: Path
     ALL_REQUIRED_FILES: List[str] = field(default_factory=list)
 
 
